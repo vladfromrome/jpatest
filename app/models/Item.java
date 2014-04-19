@@ -16,7 +16,8 @@ public class Item extends Model {
     @Id
     public  Long id;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL,targetEntity = Tag.class,fetch = FetchType.EAGER)
+    @Column(unique = true)
     //@JoinTable(name = "Item_Translation")
     public List<Tag> tags;
     public String name;

@@ -42,5 +42,8 @@ public class Application extends Controller {
         Ebean.delete(books);
         List<CD> cds= Ebean.find(CD.class).findList();
         Ebean.delete(cds);
+        List<Tag> tags= Ebean.find(Tag.class).findList();
+        Ebean.delete(tags);
+
     }
 }
