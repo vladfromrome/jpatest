@@ -21,4 +21,9 @@ public class CD extends Item{
     @JoinTable(name = "cd_tags")
     public List<Tag> tags = new ArrayList<Tag>();*/
 
+    public CD(String name, int size,List<Tag> tags) {
+        super(tags, name);
+        this.size = size;
+        this.save();
+    }
 }

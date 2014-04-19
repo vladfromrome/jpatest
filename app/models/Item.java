@@ -2,8 +2,7 @@ package models;
 
 import play.db.ebean.Model;
 
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +16,13 @@ public class Item extends Model {
     @Id
     public  Long id;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    //@JoinTable(name = "Item_Translation")
     public List<Tag> tags;
     public String name;
+
+    public Item(List<Tag> tags, String name) {
+        this.tags = tags;
+        this.name = name;
+    }
 }

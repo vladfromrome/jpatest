@@ -20,4 +20,10 @@ public class Book extends Item {
     /*@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "book_tags")
     public List<Tag> tags = new ArrayList<Tag>();*/
+
+    public Book(String name, int pageNum,List<Tag> tags ) {
+        super(tags, name);
+        this.pageNum = pageNum;
+        this.save();
+    }
 }
