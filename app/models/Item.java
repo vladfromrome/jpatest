@@ -16,14 +16,14 @@ public class Item extends Model {
     @Id
     public  Long id;
 
-    @ManyToMany(cascade = CascadeType.ALL,targetEntity = Tag.class,fetch = FetchType.EAGER)
-    @Column(unique = true)
-    //@JoinTable(name = "Item_Translation")
-    public List<Tag> tags;
+    @OneToOne(cascade = CascadeType.ALL)
+    @Basic(optional = false)
+    public Tagdata tagdata;
     public String name;
 
-    public Item(List<Tag> tags, String name) {
-        this.tags = tags;
+
+    public Item(Tagdata tagdata, String name) {
+        this.tagdata = tagdata;
         this.name = name;
     }
 }

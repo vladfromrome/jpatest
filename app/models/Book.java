@@ -21,8 +21,8 @@ public class Book extends Item {
     @JoinTable(name = "book_tags")
     public List<Tag> tags = new ArrayList<Tag>();*/
 
-    public Book(String name, int pageNum,List<Tag> tags ) {
-        super(tags, name);
+    public Book(String name, int pageNum,Tagdata tagdata ) {
+        super(tagdata, name);
         this.pageNum = pageNum;
         this.save();
     }
