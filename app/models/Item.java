@@ -4,6 +4,8 @@ import play.db.ebean.Model;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Author: Vladimir Romanov
@@ -15,6 +17,6 @@ public class Item extends Model {
     @Id
     public  Long id;
 
-
+    public List<Tag> tags;
     public String name;
 }

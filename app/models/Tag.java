@@ -14,7 +14,7 @@ import javax.persistence.Id;
 public class Tag extends Model{
     @Id
     public Long id;
-    public static Finder<Long,Tag> FIND = new Finder<>(Long.class, Tag.class);
+    //public static Finder<Long,Tag> FIND = new Finder<>(Long.class, Tag.class);
 
     public String text;
 

@@ -14,10 +14,10 @@ import java.util.List;
 @Entity
 public class Book extends Item {
 
-    public static Model.Finder<Long,Book> FIND = new Model.Finder<>(Long.class, Book.class);
+    //public static Model.Finder<Long,Book> FIND = new Model.Finder<>(Long.class, Book.class);
 
     public int pageNum;
-    @ManyToMany(cascade = CascadeType.ALL)
+    /*@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "book_tags")
-    public List<Tag> tags = new ArrayList<Tag>();
+    public List<Tag> tags = new ArrayList<Tag>();*/
 }

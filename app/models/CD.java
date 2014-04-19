@@ -14,11 +14,11 @@ import java.util.List;
 @Entity
 public class CD extends Item{
 
-    public static Finder<Long,CD> FIND = new Finder<>(Long.class, CD.class);
+    //public static Finder<Long,CD> FIND = new Finder<>(Long.class, CD.class);
 
     public int size;
-    @ManyToMany(cascade = CascadeType.ALL)
+    /*@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "cd_tags")
-    public List<Tag> tags = new ArrayList<Tag>();
+    public List<Tag> tags = new ArrayList<Tag>();*/
 
 }
