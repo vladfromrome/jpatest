@@ -2,8 +2,9 @@ package models;
 
 import play.db.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Author: Vladimir Romanov
@@ -11,12 +12,13 @@ import javax.persistence.Id;
  * Time: 22:54
  */
 @Entity
-public class CD extends Model{
-    @Id
-    public Long id;
+public class CD extends Item{
+
     public static Finder<Long,CD> FIND = new Finder<>(Long.class, CD.class);
 
     public int size;
-
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "cd_tags")
+    public List<Tag> tags = new ArrayList<Tag>();
 
 }
